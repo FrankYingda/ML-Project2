@@ -49,7 +49,7 @@ test_acc = []
 #search for best parameters using input nfold cross validation
 def svc_param_selection(X, y, nfolds):
     param_grid = {'C': Cs, 'degree' : degrees}
-    search = GridSearchCV(svm.SVC(kernel='poly'), param_grid, cv=nfolds)
+    search = GridSearchCV(svm.SVC(kernel='linear'), param_grid, cv=nfolds)
     search.fit(X, y)        #fit the search object to input training data
     search.best_params_     #return the best parameters
     return search.best_params_
