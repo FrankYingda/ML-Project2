@@ -37,7 +37,7 @@ def perceptronUpdate(x, y, w, b):
     return (w,b,mark)
 
 
-"""xs = np.zeros((4,2))
+"""xs = np.zeros((4,2))             #midterm exam
 xs[0] = [1.,1.]
 xs[1] = [-1.,1.]
 xs[2] = [-1.,-1.]
@@ -51,7 +51,7 @@ w0 = np.zeros((2))
 w0 = [0.9, 0.5]
 
 b0 = -0.2"""
-xs = np.zeros((4,2))
+xs = np.zeros((4,2))                #class slides
 xs[0] = [1.,1.]
 xs[1] = [1.,-1.]
 xs[2] = [-1.,1.]
@@ -75,33 +75,3 @@ print("final b is: \t", np.around(b, decimals=2))
 print("final w is: \t", w)
 print("final label is: ", yf)
 
-
-
-"""
-#M = 4
-#N = 2
-
-#xs = np.sign(np.around(np.random.rand(M, N) * 10 - 5, decimals=2))
-#w0 = np.around(np.random.rand(N), decimals=2)
-#b0 = np.around(rand() * 2 - 1, decimals=2)
-
-#ys = np.sign(np.around(np.random.rand(M) * 10 - 5, decimals=2))
-#ys = np.sign(xs.dot(w0) + b0)
-
-
-if y[i] != marki:
-    print("label does not equal to y, we need to update weights")
-    print("waights are: \t\t", w)
-    if y[i] * marki <= 0:
-        w += y[i] * x[i]
-        print("new weight are: \t", w)
-        b += y[i]
-        print("new b is: \t\t\t", b, "\n")
-    else:
-        print("OK!\n")
-        break
-print("final label is: \t", np.sign((sum(w * x[i] + b))), "\n")
-
-print("\nwhether converge? ", all(np.sign(yf*(xs.dot(w)+b))==1.0))
-print("\n")
-assert (all(np.sign(yf*(xs.dot(w)+b))==1.0))  # yw'x should be +1.0 for every input"""
