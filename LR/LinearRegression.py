@@ -1,3 +1,4 @@
+#Reference source: https://towardsdatascience.com/linear-regression-using-gradient-descent-97a6c8700931
 import pandas as pd  # data handeling
 import numpy as np   # numeriacal computing
 import matplotlib.pyplot as plt  # plotting core
@@ -11,6 +12,7 @@ start = time.clock()
 data = pd.read_csv('D:\JetBrains\PyCharm 2018.2\Workspace\MLProject2\LinearRegression\kc_house_data.csv')
 print("whether missing values? ", data.isnull().values.any())          #check for missing values
 
+# pairplot to find the most relatively feature to the price
 g = sns.pairplot(data, vars=["price", "bedrooms","bathrooms","sqft_living",
                             "sqft_lot","grade","sqft_above","sqft_basement"],kind="reg")
 plt.show()
@@ -66,52 +68,3 @@ end = time.clock()
 t=end-start
 print("Runtime is: ",t)
 
-
-#Y_train = data.iloc[:,data.columns == 'price']
-#X_train = data.iloc[:,3:14]
-
-#X_train_features = [x for i,x in enumerate(data.columns) if i > 2 and  i < 14]
-
-#Y_train = np.array(Y_train)
-
-#print(X_train.shape)
-#print(Y_train.shape)
-
-#rf = RandomForestClassifier(n_estimators=100, random_state=0)
-#rf.fit(X_train, Y_train)
-#print("Accuracy on training set: {:.3f}".format(rf.score(X_train, y_train)))
-#print("Accuracy on test set: {:.3f}".format(rf.score(X_test, y_test)))
-
-"""def plot_feature_importances(model):
-    plt.figure(figsize=(8,6))
-    n_features = 8
-    plt.barh(range(n_features), model.feature_importances_, align='center')
-    plt.yticks(np.arange(n_features), X_train_features)
-    plt.xlabel("Feature importance")
-    plt.ylabel("Feature")
-    plt.ylim(-1, n_features)"""
-
-#plot_feature_importances(rf)
-#plt.show()
-
-
-#plt.rcParams['figure.figsize'] = (15.0, 15.0)
-
-#sns.pairplot(data)
-#plt.show()"""
-
-
-"""pd.set_option('display.float_format', lambda x: '%.2f' % x)
-pd.set_option('display.max_columns', 21)
-pd.set_option('display.max_rows', 70)
-
-df = pd.read_csv("D:\JetBrains\PyCharm 2018.2\Workspace\MLProject2\LinearRegression\kc_house_data.csv")
-
-#print(df.isnull().values.any())     # check for missing values
-
-#df_des = df[["price","bedrooms","bathrooms","sqft_living","sqft_lot","sqft_above","yr_built","sqft_living15","sqft_lot15"]].describe()
-
-#print(df_des)
-
-
-sns.pairplot(data=df, x_vars=['sqft_living','sqft_lot','sqft_above','sqft_living15','sqft_lot15'], y_vars=["price"])"""

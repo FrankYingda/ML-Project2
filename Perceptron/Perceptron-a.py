@@ -8,12 +8,6 @@ import sys
 import matplotlib.pyplot as plt
 import time
 
-# add p02 folder
-#sys.path.insert(0, 'K:\GWU\ML\Project2')
-
-#%matplotlib notebook
-#print('You\'re running python %s' % sys.version.split(' ')[0])
-
 from retry import retry
 @retry(tries=20, delay=2)
 # <GRADED>
